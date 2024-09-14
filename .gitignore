@@ -51,6 +51,9 @@ core.*
 .DS_Store
 Thumbs.db
 .idea/
+# Add any additional Clacky-specific parameters here.
+# Ensure sensitive files are also ignored for security reasons.
+
 .vscode/
 *.log
 *.tmp

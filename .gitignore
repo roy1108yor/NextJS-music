@@ -51,6 +51,8 @@ core.*
 .DS_Store
 Thumbs.db
 .idea/
+.env
+node_modules/
 # Add any additional Clacky-specific parameters here.
 # Ensure sensitive files are also ignored for security reasons.
 

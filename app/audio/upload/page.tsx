@@ -86,7 +86,7 @@ export default function UploadAudioPage() {
                            setCover(e.target.files?.[0])
                        }}/>
             </div>
-            <input className={'bg-green-300 p-3 rounded-lg'} type="submit" value="Upload"/>
+            <input className={'bg-green-500 p-3 rounded-lg'} type="submit" value="Upload"/>
         </form>
     )
 }

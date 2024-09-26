@@ -86,7 +86,7 @@ export default function UploadAudioPage() {
                        name={'title'} value={title}/>
             </div>
             <div className={'flex flex-row gap-2'}>
-                <label htmlFor="singer">歌手</label>
+                <label htmlFor="singer">Artist</label>
                 <input className={'px-1 singer-field'} type="text"
                        onChange={(e) => setSinger(e.target.value)}
                        name={'singer'} value={singer}/>

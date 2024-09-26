@@ -11,5 +11,5 @@ yarn dev
 # or
 pnpm dev
 ```
-测试数据
-
+def hello_world():
+    print("Hello, world!")

@@ -1,21 +1,24 @@
 'use client';
 
 import {useState} from "react";
++import UploadedFilesList from './UploadedFilesList';
 
 export default function UploadAudioPage() {
     const [file, setFile] = useState<File>()
     // 封面
     const [cover, setCover] = useState<File>()
     // 歌手
-    const [singer, setSinger] = useState('')
+    const [singer, setSinger] = useState("")
     // 歌曲名
-    const [title, setTitle] = useState('')
+    const [title, setTitle] = useState("")
     // 上传是否成功
     const [success, setSuccess] = useState(false)
+    // 已上传文件列表
+    const [uploadedFiles, setUploadedFiles] = useState<{ name: string, type: string }[]>([])
 
     const clearForm = () => {
-        setTitle('')
-        setSinger('')
+        setTitle("")
+        setSinger("")
         setCover(undefined)
         setFile(undefined)
     }
@@ -34,6 +37,20 @@ export default function UploadAudioPage() {
         try {
             console.log(2)
             const data = new FormData()
+            // Add uploaded file details to the uploadedFiles state
+            setUploadedFiles(prevFiles => [...prevFiles, { name: file.name, type: file.type }]);
+            const res = await fetch('/api/audio', {
+                method: 'POST',
+                body: data
+            })
+            // handle the error
+            if (!res.ok) throw new Error(await res.text())
+            setSuccess(true)
+        } catch (e: any) {
+            // Handle errors here
+            console.error(e)
+            setSuccess(false)
+        }
             // data.append('file', file)
             data.set('file', file)
             data.set('cover', cover)
@@ -57,6 +74,7 @@ export default function UploadAudioPage() {
     }
 
     return (
+        <>
         <form className={'flex flex-col gap-2 mt-4 items-center'} onSubmit={onSubmit}>
             {success && <div className={'text-green-600 text-2xl'}>
                 Success!!!
@@ -68,7 +86,7 @@ export default function UploadAudioPage() {
                        name={'title'} value={title}/>
             </div>
             <div className={'flex flex-row gap-2'}>
-                <label htmlFor="singer">歌手</label>
+                <label htmlFor="singer">Artist</label>
                 <input className={'px-1 singer-field'} type="text"
                        onChange={(e) => setSinger(e.target.value)}
                        name={'singer'} value={singer}/>
@@ -88,5 +106,7 @@ export default function UploadAudioPage() {
             </div>
             <input className={'bg-green-300 p-3 rounded-lg'} type="submit" value="Upload"/>
         </form>
+        <UploadedFilesList files={uploadedFiles} />
+        </>
     )
 }

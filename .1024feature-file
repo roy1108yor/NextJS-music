@@ -11,3 +11,9 @@ fileChangeLogs:
   - prisma/migrations/migration_lock.toml
   - .next
   - next-env.d.ts
+  - app/audio/upload/page.tsx
+  - public/audio/0013.png
+  - public/cover/0209.png
+  - public/audio/1234.jpg
+  - public/cover/car03.jpg
+  - public/cover/car08.jpg

@@ -12,6 +12,7 @@ export default function UploadAudioPage() {
     const [title, setTitle] = useState('')
     // 上传是否成功
     const [success, setSuccess] = useState(false)
+    const [isLoading, setIsLoading] = useState(false)
 
     const clearForm = () => {
         setTitle('')
@@ -21,6 +22,8 @@ export default function UploadAudioPage() {
     }
 
     const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+        setIsLoading(true)
+
         console.log(1)
         // 阻止表单提交行为
         e.preventDefault()
@@ -46,6 +49,7 @@ export default function UploadAudioPage() {
             })
             // handle the error
             if (!res.ok) throw new Error(await res.text())
+            setIsLoading(false)
             setSuccess(true)
         } catch (e: any) {
             // Handle errors here
@@ -58,6 +62,7 @@ export default function UploadAudioPage() {
 
     return (
         <form className={'flex flex-col gap-2 mt-4 items-center'} onSubmit={onSubmit}>
+
             {success && <div className={'text-green-600 text-2xl'}>
                 Success!!!
             </div>}
@@ -86,7 +91,8 @@ export default function UploadAudioPage() {
                            setCover(e.target.files?.[0])
                        }}/>
             </div>
+            {isLoading && <div className={'animate-spin rounded-full h-10 w-10 border-b-2 border-gray-900'}></div>}
             <input className={'bg-green-300 p-3 rounded-lg'} type="submit" value="Upload"/>
         </form>
     )
-}
+}    

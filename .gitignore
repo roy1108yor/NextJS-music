@@ -1,4 +1,3 @@
-
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
 # dependencies
@@ -67,3 +66,64 @@ node_modules/
 *.lock
 package-lock.json
 pnpm-lock.yaml
+
+# Clacky Env Files
+.1024.nix
+.1024nix
+.1024feature-file
+.1024feature*
+*.dll
+.paas-unit-*
+.breakpoints
+core.*
+coverage/
+
+# System and Version Control Files
+.git/
+.DS_Store
+Thumbs.db
+.nfs*
+
+# Dependencies and Build Artifacts
+dist/
+env/
+venv/
+vendor/
+cython_debug/
+
+# Logs, Temporary, and Backup Files
+*.bak
+*.old
+*.pid
+*.seed
+*.pid.lock
+
+# Language and Framework Specific Files
+
+## JavaScript/TypeScript
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+*.tsbuildinfo
+
+## Python
+**/__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+*.env
+
+## Go
+*.exe
+*.out
+*.test
+
+## Database Files
+*.sqlite
+*.db
+*.sql
+*.sql-journal
+
+.pnpm-store/

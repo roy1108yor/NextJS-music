@@ -17,3 +17,4 @@ fileChangeLogs:
   - public/audio/1234.jpg
   - public/cover/car03.jpg
   - public/cover/car08.jpg
+  - .pnpm-store

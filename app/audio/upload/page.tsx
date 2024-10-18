@@ -13,6 +13,7 @@ export default function UploadAudioPage() {
     // 上传是否成功
     const [success, setSuccess] = useState(false)
     const [isLoading, setIsLoading] = useState(false)
+    const [error, setError] = useState<string | null>(null)
 
     const clearForm = () => {
         setTitle('')
@@ -51,7 +52,9 @@ export default function UploadAudioPage() {
             if (!res.ok) throw new Error(await res.text())
             setIsLoading(false)
             setSuccess(true)
+            setError(null)
         } catch (e: any) {
+            setError(e.message) // Update error state with the error message
             // Handle errors here
             console.error(e)
             setSuccess(false)
@@ -63,10 +66,12 @@ export default function UploadAudioPage() {
     return (
         <form className={'flex flex-col gap-2 mt-4 items-center'} onSubmit={onSubmit}>
             {success && <div className={'text-green-600 text-2xl'}>
+            {error && <div className={'text-red-600 text-xl'}>{error}</div>}
+
                 Success!!!
             </div>}
             <div className={'flex flex-row gap-2'}>
-                <label htmlFor="title">歌名001</label>
+                <label htmlFor="title">歌名</label>
                 <input className={'px-1 song-name-field'} type="text"
                        onChange={(e) => setTitle(e.target.value)}
                        name={'title'} value={title}/>

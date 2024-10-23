@@ -3,6 +3,7 @@
 
 npx prisma migrate dev
 
+
 nix-env -iA nixpkgs.mysql80
 mysql -u root -p -h 30.0.6.219 -P 33151
 

@@ -63,8 +63,8 @@ export default function UploadAudioPage() {
         clearForm()
     }
 
-    return (
-        <form className={'flex flex-col gap-2 mt-4 items-center'} onSubmit={onSubmit}>
+return (
+        <form className={'flex flex-col gap-2 mt-4 items-center'} onSubmit={onSubmit} style={{ backgroundColor: '#800080' }}>
             {success && <div className={'text-green-600 text-2xl'}>
             {error && <div className={'text-red-600 text-xl'}>{error}</div>}
 

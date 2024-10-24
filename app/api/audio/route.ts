@@ -29,12 +29,7 @@ export async function POST(request: NextRequest) {
     const file: File | null = data.get('file') as unknown as File
     const cover: File | null = data.get('cover') as unknown as File
 
-    console.log("File:", file);
-    console.log("Cover:", cover);
-    console.log("File Type:", file ? file.type : "No file");
-    console.log("Cover Type:", cover ? cover.type : "No cover");
-    console.log("File Size:", file ? file.size : "No file");
-    console.log("Cover Size:", cover ? cover.size : "No cover");
+
     if (!file || !cover) {
         console.log('Missing one or both files.');
     } else {

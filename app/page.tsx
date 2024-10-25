@@ -32,6 +32,35 @@ export default function Home() {
     window.location.href = 'https://www.baidu.com';
   };
 
+  const handleCalculate = () => {
+    const value1 = parseFloat((document.getElementById('value1') as HTMLInputElement).value);
+    const value2 = parseFloat((document.getElementById('value2') as HTMLInputElement).value);
+    const operation = (document.getElementById('operation') as HTMLSelectElement).value;
+    let result;
+
+    if (isNaN(value1) || isNaN(value2)) {
+      result = 'Please enter valid numbers';
+    } else {
+      switch (operation) {
+        case 'add':
+          result = value1 + value2;
+          break;
+        case 'subtract':
+          result = value1 - value2;
+          break;
+        case 'multiply':
+          result = value1 * value2;
+          break;
+        case 'divide':
+          result = value2 !== 0 ? value1 / value2 : 'Cannot divide by zero';
+          break;
+        default:
+          result = 'Invalid operation';
+      }
+    }
+    (document.getElementById('result') as HTMLDivElement).innerText = `Result: ${result}`;
+  };
+
   return (
     <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh', flexDirection: 'column', position: 'relative' }}>
     <div style={{ position: 'absolute', top: '100px', left: '30px', textAlign: 'left', maxWidth: '3000px', fontSize: '14px', lineHeight: '1.5' }}>
@@ -60,11 +89,41 @@ export default function Home() {
           height: '100px',
           fontSize: '16px',
           cursor: 'pointer',
-          marginBottom: '400px' 
+          marginBottom: '20px' 
         }}
       >
         page jump
       </button>
+      <input 
+        type="number" 
+        id="value1" 
+        placeholder="Enter value 1" 
+        style={{ marginBottom: '20px', padding: '5px', fontSize: '16px', width: '200px' }}
+      />
+      <input 
+        type="number" 
+        id="value2" 
+        placeholder="Enter value 2" 
+        style={{ marginBottom: '20px', padding: '5px', fontSize: '16px', width: '200px' }}
+      />
+ <select id="operation" style={{ marginBottom: '20px', padding: '5px', fontSize: '16px', width: '200px' }}>
+        <option value="add">Add</option>
+        <option value="subtract">Subtract</option>
+        <option value="multiply">Multiply</option>
+        <option value="divide">Divide</option>
+      </select>
+      <button 
+        id="calculateButton" onClick={handleCalculate}
+        style={{ 
+          padding: '10px 20px', 
+          fontSize: '16px', 
+          cursor: 'pointer', 
+          backgroundColor: 'green' 
+        }}
+      >
+        Calculate
+      </button>
+      <div id="result" style={{ marginTop: '20px', fontSize: '18px', fontWeight: 'bold' }}></div>
 
       <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
         <input 

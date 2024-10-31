@@ -18,7 +18,7 @@ Thumbs.db
 .nfs*
 
 # dependencies
-/node_modules
+
 /.pnp
 .pnp.js
 
@@ -86,3 +86,16 @@ yarn-debug.log*
 
 # typescript
 next-env.d.ts
+
+# Additional Entries
+.1024.run_command
+core.*.lock
+.paas-unit-*.log
+.coverage
+*.class
+.cache/
+coverage/
+*.seed
+*.pid.lock
+.vscode/
+.idea/

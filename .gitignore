@@ -1,71 +1,14 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
-# Clacky Env Files
-.1024.nix
-.1024nix
-.1024feature-file
-.1024feature*
-*.dll
-.paas-unit-*
-.breakpoints
-core.*
-coverage/
-
-# System and Version Control Files
 .git/
-.DS_Store
-Thumbs.db
-.nfs*
 
-# dependencies
 
-/.pnp
-.pnp.js
-
-# Language and Framework Specific Files
 node_modules/
 .pnpm-store/
-dist/
-env/
-venv/
-vendor/
-cython_debug/
-*.log
-*.tmp
-*.bak
-*.old
-*.pid
-*.seed
 .env
-*.env.local
-*.env.development.local
-*.env.test.local
-*.env.production.local
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-.pnpm-debug.log*
-*.tsbuildinfo
-**/__pycache__/
-*.py[cod]
-*.pyo
-*.pyd
-.Python
-*.env
-*.exe
-*.out
-*.test
-*.sqlite
-*.db
-*.sql
-*.sql-journal
-
-# testing
-/coverage
-
-# next.js
 /.next/
 /out/
+
 
 # production
 /build
@@ -99,3 +42,4 @@ coverage/
 *.pid.lock
 .vscode/
 .idea/
+

@@ -14,3 +14,7 @@ redis-cli -h 30.0.6.219 -p 33150
 
 nix-env -iA nixpkgs.mongosh
 mongosh mongodb://30.0.2.137:33046
+
+123456
+
+qqqq

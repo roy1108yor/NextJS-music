@@ -81,42 +81,42 @@ export default function Home() {
         </p>
     </div>
       
-      <button 
+<button 
         onClick={handleClick} 
         style={{ 
           backgroundColor: 'blue', 
-          width: '200px', 
-          height: '100px',
-          fontSize: '16px',
+          width: '180px', 
+          height: '80px',
+          fontSize: '18px',
           cursor: 'pointer',
           marginBottom: '20px' 
         }}
       >
-        page jump
+        Page Jump
       </button>
-      <input 
+<input 
         type="number" 
         id="value1" 
         placeholder="Enter value 1" 
-        style={{ marginBottom: '20px', padding: '5px', fontSize: '16px', width: '200px' }}
+        style={{ marginBottom: '20px', padding: '10px', fontSize: '18px', width: '250px' }}
       />
       <input 
         type="number" 
         id="value2" 
         placeholder="Enter value 2" 
-        style={{ marginBottom: '20px', padding: '5px', fontSize: '16px', width: '200px' }}
+        style={{ marginBottom: '20px', padding: '10px', fontSize: '18px', width: '250px' }}
       />
- <select id="operation" style={{ marginBottom: '20px', padding: '5px', fontSize: '16px', width: '200px' }}>
+<select id="operation" style={{ marginBottom: '20px', padding: '10px', fontSize: '18px', width: '250px' }}>
         <option value="add">Add</option>
         <option value="subtract">Subtract</option>
         <option value="multiply">Multiply</option>
         <option value="divide">Divide</option>
-      </select>
-      <button 
+</select>
+<button 
         id="calculateButton" onClick={handleCalculate}
         style={{ 
-          padding: '10px 20px', 
-          fontSize: '16px', 
+          padding: '10px 30px', 
+          fontSize: '18px', 
           cursor: 'pointer', 
           backgroundColor: 'green' 
         }}
@@ -125,26 +125,26 @@ export default function Home() {
       </button>
       <div id="result" style={{ marginTop: '20px', fontSize: '18px', fontWeight: 'bold' }}></div>
 
-      <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-        <input 
+      <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', backgroundColor: '#f9f9f9', padding: '20px', borderRadius: '10px', boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)' }}>
+      <input 
           type="text" 
           placeholder="Please enter key" 
           value={key} 
           onChange={(e) => setKey(e.target.value)} 
-          style={{ marginBottom: '20px', padding: '5px', fontSize: '16px', width: '200px' }}
+          style={{ marginBottom: '20px', padding: '10px', fontSize: '18px', width: '250px', borderRadius: '5px', border: '1px solid #ccc' }}
         />
-        <input 
+<input 
           type="text" 
           placeholder="Please enter value" 
           value={value} 
           onChange={(e) => setValue(e.target.value)} 
-          style={{ marginBottom: '20px', padding: '5px', fontSize: '16px', width: '200px' }}
+          style={{ marginBottom: '20px', padding: '10px', fontSize: '18px', width: '250px', borderRadius: '5px', border: '1px solid #ccc' }}
         />
-        <button 
+<button 
           type="submit" 
-          style={{ padding: '50px 100px', fontSize: '24px', cursor: 'pointer', backgroundColor: 'red' }}
+          style={{ padding: '20px 40px', fontSize: '20px', cursor: 'pointer', backgroundColor: 'red', borderRadius: '5px', border: 'none' }}
         >
-          redis send
+          Redis Send
         </button>
       </form>
       <button 

@@ -27,3 +27,21 @@ button {
   padding: 8px; /* Add some padding inside the fields */
   border-radius: 4px; /* Slightly rounded corners */
 }
+
+/* Gradient color changing animation */
+@keyframes gradient-animation {
+  0% {
+    color: red;
+  }
+  50% {
+    color: yellow;
+  }
+  100% {
+    color: blue;
+  }
+}
+
+/* Apply animation to text elements */
+.animated-text {
+  animation: gradient-animation 3s ease infinite;
+}

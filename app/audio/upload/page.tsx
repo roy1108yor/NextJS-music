@@ -62,41 +62,40 @@ export default function UploadAudioPage() {
 
         clearForm()
     }
+            return (
+                    <form className={'flex flex-col gap-2 mt-4 items-center'} onSubmit={onSubmit} style={{ backgroundColor: '#800080' }}>
+            <div className={'text-green-600 text-2xl animated-text'}>
+                        {error && <div className={'text-red-600 text-xl animated-text'}>{error}</div>}
 
-return (
-        <form className={'flex flex-col gap-2 mt-4 items-center'} onSubmit={onSubmit} style={{ backgroundColor: '#800080' }}>
-            {success && <div className={'text-green-600 text-2xl'}>
-            {error && <div className={'text-red-600 text-xl'}>{error}</div>}
+                            Success!!!
+                        </div>
 
-                Success!!!
-            </div>}
-            <div className={'flex flex-row gap-2'}>
-                <label htmlFor="title">歌名</label>
-                <input className={'px-1 song-name-field'} type="text"
-                       onChange={(e) => setTitle(e.target.value)}
-                       name={'title'} value={title}/>
-            </div>
-            <div className={'flex flex-row gap-2'}>
-                <label htmlFor="singer">歌手</label>
-                <input className={'px-1 singer-field'} type="text"
-                       onChange={(e) => setSinger(e.target.value)}
-                       name={'singer'} value={singer}/>
-            </div>
-            <div className={'flex flex-row gap-2'}>
-                <label htmlFor="file">歌曲</label>
-                <input type="file" name={'file'}
-                       onChange={(e) => setFile(e.target.files?.[0])}/>
-            </div>
-            <div className={'flex flex-row gap-2'}>
-                <label htmlFor="cover">封面</label>
-                <input type="file" name={'cover'}
-                       onChange={(e) => {
-                           // console.log(e.target.files)
-                           setCover(e.target.files?.[0])
-                       }}/>
-            </div>
-            {isLoading && <div className={'animate-spin rounded-full h-10 w-10 border-b-2 border-gray-900'}></div>}
-            <input className={'bg-green-300 p-3 rounded-lg'} type="submit" value="Upload"/>
-        </form>
-    )
+            <label htmlFor="title" className={'animated-text'}>歌名</label>
+                            <input className={'px-1 song-name-field'} type="text"
+                                   onChange={(e) => setTitle(e.target.value)}
+                                   name={'title'} value={title}/>
+
+                        <div className={'flex flex-row gap-2'}>
+            <label htmlFor="singer" className={'animated-text'}>歌手</label>
+                            <input className={'px-1 singer-field'} type="text"
+                                   onChange={(e) => setSinger(e.target.value)}
+                                   name={'singer'} value={singer}/>
+                        </div>
+                        <div className={'flex flex-row gap-2'}>
+                            <label htmlFor="file">歌曲</label>
+                            <input type="file" name={'file'}
+                                   onChange={(e) => setFile(e.target.files?.[0])}/>
+                        </div>
+                        <div className={'flex flex-row gap-2'}>
+                            <label htmlFor="cover">封面</label>
+                            <input type="file" name={'cover'}
+                                   onChange={(e) => {
+                                       // console.log(e.target.files)
+                                       setCover(e.target.files?.[0])
+                                   }}/>
+                        </div>
+                        {isLoading && <div className={'animate-spin rounded-full h-10 w-10 border-b-2 border-gray-900'}></div>}
+                        <input className={'bg-green-300 p-3 rounded-lg'} type="submit" value="Upload"/>
+                    </form>
+                )
 }    

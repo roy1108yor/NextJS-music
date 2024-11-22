@@ -32,7 +32,7 @@ export default function Home() {
     window.location.href = 'https://www.baidu.com';
   };
 
-  const handleCalculate = () => {
+const handleCalculate = () => {
     const value1 = parseFloat((document.getElementById('value1') as HTMLInputElement).value);
     const value2 = parseFloat((document.getElementById('value2') as HTMLInputElement).value);
     const operation = (document.getElementById('operation') as HTMLSelectElement).value;
@@ -52,7 +52,7 @@ export default function Home() {
           result = value1 * value2;
           break;
         case 'divide':
-          result = value2 !== 0 ? value1 / value2 : 'Cannot divide by zero';
+          result = value2 !== 0 ? (value1 / value2).toFixed(2) : 'Cannot divide by zero';
           break;
         default:
           result = 'Invalid operation';
@@ -60,6 +60,10 @@ export default function Home() {
     }
     (document.getElementById('result') as HTMLDivElement).innerText = `Result: ${result}`;
   };
+
+const calculateAverage = (num1, num2) => {
+    return (num1 + num2) / 2;
+};
 
   return (
     <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh', flexDirection: 'column', position: 'relative' }}>

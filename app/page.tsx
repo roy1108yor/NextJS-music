@@ -54,6 +54,9 @@ const handleCalculate = () => {
         case 'divide':
           result = value2 !== 0 ? (value1 / value2).toFixed(2) : 'Cannot divide by zero';
           break;
+        case 'average':
+          result = ((value1 + value2) / 2).toFixed(2);
+          break;
         default:
           result = 'Invalid operation';
       }
@@ -115,6 +118,7 @@ const calculateAverage = (num1, num2) => {
         <option value="subtract">Subtract</option>
         <option value="multiply">Multiply</option>
         <option value="divide">Divide</option>
+        <option value="average">Average</option>
 </select>
 <button 
         id="calculateButton" onClick={handleCalculate}

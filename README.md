@@ -16,3 +16,5 @@ nix-env -iA nixpkgs.mongosh
 mongosh mongodb://30.0.2.137:33046
 
 手动提交 第一次
+
+git 修改第二次

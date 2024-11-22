@@ -73,7 +73,7 @@ export default function Home() {
         POST /api/audio: Handles file uploads for music tracks and cover images
     </div>
     <div className="lyrics-section" style={{ position: 'absolute', top: '10px', right: '10px', backgroundColor: 'rgba(255, 255, 255, 0.8)', padding: '10px', borderRadius: '5px', boxShadow: '0 2px 10px rgba(0, 0, 0, 0.2)', textAlign: 'right', fontSize: '16px', lineHeight: '1.4' }}>
-        <h2 className="text-lg font-bold">青花瓷</h2>
+        <h2 className="text-lg font-bold"></h2>
         <p className="text-sm mt-2">
             素雅的青花瓷，<br />
             悠远的情思，<br />

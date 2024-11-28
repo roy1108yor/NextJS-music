@@ -2,11 +2,3 @@
 
 .git/
 
-
-node_modules/
-.pnpm-store/
-.env
-/.next/
-/out/
-.1024*
-!.1024

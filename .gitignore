@@ -8,3 +8,5 @@ node_modules/
 .env
 /.next/
 /out/
+.1024*
+!.1024

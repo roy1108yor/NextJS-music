@@ -2,8 +2,6 @@
 
 .git/
 
-.1024*
-!.1024
 .next/
 node_modules/
 .env

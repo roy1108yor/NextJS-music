@@ -1,5 +1,4 @@
 
-测试数据
 
 npx prisma migrate dev
 
@@ -14,7 +13,3 @@ redis-cli -h 30.0.6.219 -p 33150
 
 nix-env -iA nixpkgs.mongosh
 mongosh mongodb://30.0.2.137:33046
-
-手动提交 第一次
-
-git 修改第二次

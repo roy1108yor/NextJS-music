@@ -154,7 +154,19 @@ const calculateAverage = (num1, num2) => {
         >
           Redis Send
         </button>
-      </form>
+</form>
+      <button 
+        onClick={() => router.push('/todo')} 
+        style={{ 
+          backgroundColor: 'orange', 
+          padding: '10px 20px', 
+          fontSize: '18px', 
+          cursor: 'pointer', 
+          marginTop: '20px' 
+        }}
+      >
+        Go to Todo
+      </button>
       <button 
         onClick={handleRedirect} 
         style={{ 

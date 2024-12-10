@@ -1,5 +1,5 @@
 
-
+test 
 npx prisma migrate dev
 
 nix-env -iA nixpkgs.mysql80

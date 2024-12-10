@@ -1,5 +1,5 @@
 
-
+test 
 npx prisma migrate dev
 
 nix-env -iA nixpkgs.mysql80
@@ -17,3 +17,5 @@ mongosh mongodb://30.0.2.137:33046
 install redis
 
 install mongo
+1234567
+12312321

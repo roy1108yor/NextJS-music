@@ -4,12 +4,3 @@
 .next/
 node_modules/
 .env
-# Clacky-related configuration
-.1024*
-!.1024
-# Language-specific files
-*.tsbuildinfo
-*.js.map
-out/
-build/
-.next/

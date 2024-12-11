@@ -1,10 +1,5 @@
-# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
 .git/
 .next/
 node_modules/
 .env
-.1024*
-!.1024
-out/
-dist/

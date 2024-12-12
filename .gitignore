@@ -1,5 +1,8 @@
-
 .git/
 .next/
 node_modules/
 .env
+.DS_Store
+build
+.1024*
+!.1024

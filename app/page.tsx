@@ -78,15 +78,7 @@ const calculateAverage = (num1, num2) => {
         position: 'relative',
         background: 'linear-gradient(to bottom, lightgreen, green, darkgreen)'
       }}>
-      <div style={{ position: 'absolute', top: '100px', left: '30px', textAlign: 'left', maxWidth: '3000px', fontSize: '14px', lineHeight: '1.5' }}>
-          Music List Management:<br />
-          GET /api/audio/list: Retrieves all music lists.<br />
-          POST /api/audio/list:
-      Creates a new music list for a user. Validates the user and saves the list.<br />
-        PUT /api/audio/list: Adds a music track to an existing list.<br />
-        GET /api/audio: Retrieves all music details.<br />
-        POST /api/audio: Handles file uploads for music tracks and cover images
-    </div>
+
     <div className="lyrics-section" style={{ position: 'absolute', top: '10px', right: '10px', backgroundColor: 'rgba(255, 255, 255, 0.8)', padding: '10px', borderRadius: '5px', boxShadow: '0 2px 10px rgba(0, 0, 0, 0.2)', textAlign: 'right', fontSize: '16px', lineHeight: '1.4' }}>
         <h2 className="text-lg font-bold"></h2>
         <p className="text-sm mt-2">

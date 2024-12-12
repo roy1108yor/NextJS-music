@@ -2,3 +2,22 @@
 .next/
 node_modules/
 .env
+
+# Clacky-related configuration
+.1024*
+!.1024
+
+# Language-specific files
+# (Add any language specific files to ignore here)
+
+# Framework-related files
+# (Add any framework specific files to ignore here)
+
+# Package manager directories
+# (Add any package manager specific files to ignore here)
+
+# IDE config
+# (Add any IDE configuration files to ignore here)
+
+# Others
+# (Add any other files to ignore here)

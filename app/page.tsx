@@ -68,12 +68,20 @@ const calculateAverage = (num1, num2) => {
     return (num1 + num2) / 2;
 };
 
-  return (
-    <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh', flexDirection: 'column', position: 'relative' }}>
-    <div style={{ position: 'absolute', top: '100px', left: '30px', textAlign: 'left', maxWidth: '3000px', fontSize: '14px', lineHeight: '1.5' }}>
-        Music List Management:<br />
-        GET /api/audio/list: Retrieves all music lists.<br />
-        POST /api/audio/list:
+    return (
+      <div style={{ 
+        display: 'flex', 
+        justifyContent: 'center', 
+        alignItems: 'center', 
+        height: '100vh', 
+        flexDirection: 'column', 
+        position: 'relative',
+        background: 'linear-gradient(to bottom, lightgreen, green, darkgreen)'
+      }}>
+      <div style={{ position: 'absolute', top: '100px', left: '30px', textAlign: 'left', maxWidth: '3000px', fontSize: '14px', lineHeight: '1.5' }}>
+          Music List Management:<br />
+          GET /api/audio/list: Retrieves all music lists.<br />
+          POST /api/audio/list:
       Creates a new music list for a user. Validates the user and saves the list.<br />
         PUT /api/audio/list: Adds a music track to an existing list.<br />
         GET /api/audio: Retrieves all music details.<br />

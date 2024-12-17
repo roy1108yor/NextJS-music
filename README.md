@@ -17,5 +17,9 @@ mongosh mongodb://30.0.2.137:33046
 install redis
 
 install mongo
-1234567
-12312321
+
+* Initiate `.env` file
+
+```bash
+cp .env.example .env
+```

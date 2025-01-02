@@ -8,22 +8,31 @@ export default function TodoApp() {
       return savedTodos ? JSON.parse(savedTodos) : [];
     }
     return [];
-  });
   const [newTodo, setNewTodo] = useState('');
   const [editingTodo, setEditingTodo] = useState(null);
   const [editText, setEditText] = useState('');
+  const [operationHistory, setOperationHistory] = useState([]);
 
   useEffect(() => {
-    if (typeof window !== 'undefined') {
-      localStorage.setItem('todos', JSON.stringify(todos));
-    }
+      if (typeof window !== 'undefined') {
+          localStorage.setItem('todos', JSON.stringify(todos));
+      }
   }, [todos]);
 
+  useEffect(() => {
+      const fetchHistory = async () => {
+          const response = await fetch('/api/history');
+          const data = await response.json();
+          setOperationHistory(data);
+      };
+      fetchHistory();
+  }, []);
+
   const addTodo = () => {
-    if (newTodo.trim()) {
-      setTodos([...todos, { text: newTodo, completed: false }]);
-      setNewTodo('');
-    }
+      if (newTodo.trim()) {
+          setTodos([...todos, { text: newTodo, completed: false }]);
+          setNewTodo('');
+      }
   };
 
   const deleteTodo = (index) => {

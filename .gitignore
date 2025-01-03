@@ -2,17 +2,3 @@
 .next/
 node_modules/
 .env
-
-# Clacky-related configuration
-.1024*
-!.1024
-.breakpoints
-
-# Language-specific files
-# Add any other language-specific ignores if necessary
-
-# Framework-related files
-# Add any other framework-related ignores if necessary
-
-# Package manager directories
-# Add entries for node_modules or other package manager directories if necessary

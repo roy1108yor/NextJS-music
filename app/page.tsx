@@ -8,25 +8,74 @@ export default function Home() {
   const [value, setValue] = useState('');
 
   const handleClick = () => {
-    router.push('/audio/upload');
+      router.push('/audio/upload');
   };
 
   const handleSubmit = async (e: { preventDefault: () => void; }) => {
-    e.preventDefault();
-    const res = await fetch('/api/redis', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({ key, value }),
-    });
+      e.preventDefault();
+      const res = await fetch('/api/redis', {
+          method: 'POST',
+          headers: {
+              'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ key, value }),
+      });
 
-    if (res.ok) {
-      alert('Data stored in Redis');
-    } else {
-      alert('Failed to store data');
-    }
+      if (res.ok) {
+          alert('Data stored in Redis');
+      } else {
+          alert('Failed to store data');
+      }
   };
+
+  const handleViewHistory = async () => {
+      const res = await fetch('/api/history/operations');
+      if (res.ok) {
+          const history = await res.json();
+          console.log(history);
+          alert(JSON.stringify(history, null, 2));
+      } else {
+          alert('Failed to retrieve history');
+      }
+  };
+
+  return (
+        <div style={{ 
+          display: 'flex', 
+          justifyContent: 'center', 
+          alignItems: 'center', 
+          height: '100vh', 
+          flexDirection: 'column', 
+          position: 'relative',
+          background: 'linear-gradient(to bottom, lightgreen, green, darkgreen)'
+        }}>
+
+        <button
+            onClick={handleClick}
+            style={{ 
+              backgroundColor: 'blue', 
+              width: '180px', 
+              height: '80px',
+              fontSize: '18px',
+              cursor: 'pointer',
+              marginBottom: '20px' 
+            }}
+          >
+            Page Jump
+          </button>
+        <button
+            onClick={handleViewHistory}
+            style={{ 
+              backgroundColor: 'purple', 
+              width: '180px', 
+              height: '80px',
+              fontSize: '18px',
+              cursor: 'pointer',
+              marginBottom: '20px' 
+            }}
+          >
+            Ver historial
+          </button>
 
   const handleRedirect = () => {
     window.location.href = 'https://www.baidu.com';

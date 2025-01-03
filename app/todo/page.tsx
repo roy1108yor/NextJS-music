@@ -19,6 +19,17 @@ export default function TodoApp() {
       }
   }, [todos]);
 
+  const handleViewHistory = async () => {
+      const res = await fetch('/api/history/operations');
+      if (res.ok) {
+          const history = await res.json();
+          console.log(history);
+          alert(JSON.stringify(history, null, 2));
+      } else {
+          alert('Failed to retrieve history');
+      }
+  };
+
   useEffect(() => {
       const fetchHistory = async () => {
           const response = await fetch('/api/history');
@@ -81,6 +92,9 @@ export default function TodoApp() {
           Add
         </button>
       </div>
+      <button onClick={handleViewHistory} style={{ padding: '10px', fontSize: '16px', marginBottom: '20px' }}>
+          Ver historial
+      </button>
       <ul style={{ listStyleType: 'none', padding: 0, width: '300px' }}>
         {todos.map((todo, index) => (
           <li key={index} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '10px 0', borderBottom: '1px solid #ccc' }}>

@@ -1,4 +1,0 @@
-# Command to run when "Run" button clicked
-run_command: npm run dev
-# Command to install dependencies, will execute each time a new thread created to ensure dependencies up-to-date
-dependency_command: npm install

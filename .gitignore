@@ -1,7 +1,11 @@
-
-
 # Git
 .git/
+.gitignore
+
+# Clacky specific
+.1024*
+!.1024
+.breakpoints
 
 # Next.js
 .next/
@@ -9,30 +13,34 @@ out/
 build/
 dist/
 
-# Node
+# Node.js environment
 node_modules/
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
-# Environment
+# Environment variables
 .env
 .env*.local
-.env.development.local
+.env.development.local 
 .env.test.local
 .env.production.local
 
-# IDE
+# TypeScript
+*.tsbuildinfo
+next-env.d.ts
+
+# IDE specific
 .idea/
 .vscode/
 *.swp
 *.swo
 
-# OS
+# OS specific
 .DS_Store
 Thumbs.db
 
-# Debug
+# Debug logs
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
@@ -48,5 +56,4 @@ out/
 
 # Misc
 *.pem
-.DS_Store
 *.log

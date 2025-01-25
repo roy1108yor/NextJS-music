@@ -1,8 +1,5 @@
 # Git
 .git/
-.1024*
-!.1024
-.breakpoints
 
 # Next.js
 .next/

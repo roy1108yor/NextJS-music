@@ -1,10 +1,6 @@
 # Git
 .git/
 
-# Clacky-related configurations
-.1024*
-!.1024
-.breakpoints
 
 # Next.js
 .next/

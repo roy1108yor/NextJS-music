@@ -52,8 +52,3 @@ out/
 # Misc
 *.pem
 *.log
-
-# Clacky specific
-.1024*
-!.1024
-.breakpoints

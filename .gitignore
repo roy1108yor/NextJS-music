@@ -1,6 +1,10 @@
 # Git
 .git/
 
+# Clacky-related configuration
+.1024*
+!.1024
+.breakpoints
 
 # Next.js
 .next/
@@ -52,3 +56,7 @@ out/
 # Misc
 *.pem
 *.log
+
+# Cache
+.npm
+.eslintcache
